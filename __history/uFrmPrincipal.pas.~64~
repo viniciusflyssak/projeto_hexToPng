@@ -68,17 +68,16 @@ begin
   try
     qryImagem.Connection := DM.Connection;
     qryImagem.Sql.Add(' SELECT TITULO, IMAGEM FROM IMAGENS ');
-    qryImagem.Sql.Add(' WHERE TITULO LIKE ''%:pTitulo%'' ');
-    qryImagem.Params.ParamByName('pTitulo').Value := edtBusca.Text;
+    qryImagem.Sql.Add(' WHERE TITULO  = :pTitulo ');
+    qryImagem.ParamByName('pTitulo').Value := edtBusca.Text;
     qryImagem.Open;
+    qryImagem.First;
     if not(qryImagem.RecordCount > 0) then
       raise Exception.Create('Imagem não encontrada!');
     Result := qryImagem.FieldByName('IMAGEM').AsAnsiString;
   finally
     FreeAndNil(qryImagem);
   end;
-
-  result := '';
 end;
 
 function TfrmPrincipal.HexStringToBin(HexStr: AnsiString): TMemoryStream;

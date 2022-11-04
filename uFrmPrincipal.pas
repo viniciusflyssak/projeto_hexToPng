@@ -52,7 +52,6 @@ begin
     imgTeste.Picture.Graphic := png;
     imgTeste.Proportional := True;
     imgTeste.Center := True;
-    imgTeste.Picture.Assign(png);
   finally
     png.Destroy;
     Stream.free;

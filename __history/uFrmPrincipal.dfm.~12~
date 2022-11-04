@@ -24,6 +24,10 @@ object frmPrincipal: TfrmPrincipal
     Height = 241
     Align = alClient
     TabOrder = 0
+    ExplicitLeft = 296
+    ExplicitTop = 64
+    ExplicitWidth = 185
+    ExplicitHeight = 41
     object imgTeste: TImage
       Left = 1
       Top = 1
@@ -42,6 +46,9 @@ object frmPrincipal: TfrmPrincipal
       Height = 41
       Align = alBottom
       TabOrder = 0
+      ExplicitLeft = 192
+      ExplicitTop = 184
+      ExplicitWidth = 185
       object btnCarregarImagem: TButton
         Left = 405
         Top = 1
@@ -57,11 +64,14 @@ object frmPrincipal: TfrmPrincipal
         ParentFont = False
         TabOrder = 0
         OnClick = btnCarregarImagemClick
+        ExplicitLeft = 384
+        ExplicitTop = 6
+        ExplicitHeight = 33
       end
       object edtBusca: TEdit
         Left = 1
         Top = 1
-        Width = 398
+        Width = 376
         Height = 39
         Hint = 'Digite o titulo da imagem de que busca'
         Align = alLeft
@@ -74,6 +84,7 @@ object frmPrincipal: TfrmPrincipal
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
+        ExplicitHeight = 31
       end
     end
   end
