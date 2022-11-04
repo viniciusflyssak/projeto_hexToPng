@@ -20,7 +20,7 @@ type
     edtBusca: TEdit;
     procedure btnCarregarImagemClick(Sender: TObject);
     function HexStringToBin(HexStr: AnsiString): TMemoryStream;
-    function BuscaImagem(tituloImagem: string): AnsiString;
+    function BuscaImagem: AnsiString;
     procedure edtBuscaKeyPress(Sender: TObject; var Key: Char);
     procedure FormResize(Sender: TObject);
 
@@ -47,7 +47,7 @@ begin
   if Trim(edtBusca.Text) = '' then
     raise Exception.Create('Preencha o campo de busca!');
   png := TPngImage.Create;
-  Stream := HexStringToBin(BuscaImagem('teste'));
+  Stream := HexStringToBin(BuscaImagem);
   try
     Stream.position := 0;
     png.LoadFromStream(Stream);
@@ -60,7 +60,7 @@ begin
   end;
 end;
 
-function TfrmPrincipal.BuscaImagem(tituloImagem: string): AnsiString;
+function TfrmPrincipal.BuscaImagem: AnsiString;
 var
   qryImagem: TFDQuery;
 begin

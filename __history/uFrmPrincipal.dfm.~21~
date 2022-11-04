@@ -1,11 +1,9 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu]
-  BorderStyle = bsSingle
   Caption = 'Principal'
-  ClientHeight = 241
-  ClientWidth = 515
+  ClientHeight = 231
+  ClientWidth = 505
   Color = clBtnFace
   DefaultMonitor = dmDesktop
   Font.Charset = DEFAULT_CHARSET
@@ -15,24 +13,23 @@ object frmPrincipal: TfrmPrincipal
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object pnlFundo: TPanel
     Left = 0
     Top = 0
-    Width = 515
-    Height = 241
+    Width = 505
+    Height = 231
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 296
-    ExplicitTop = 64
-    ExplicitWidth = 185
-    ExplicitHeight = 41
+    ExplicitWidth = 515
+    ExplicitHeight = 241
     object imgTeste: TImage
       Left = 1
       Top = 1
-      Width = 513
-      Height = 198
+      Width = 503
+      Height = 188
       Align = alClient
       ExplicitLeft = 192
       ExplicitTop = 56
@@ -41,16 +38,15 @@ object frmPrincipal: TfrmPrincipal
     end
     object pnlBotoes: TPanel
       Left = 1
-      Top = 199
-      Width = 513
+      Top = 189
+      Width = 503
       Height = 41
       Align = alBottom
       TabOrder = 0
-      ExplicitLeft = 192
-      ExplicitTop = 184
-      ExplicitWidth = 185
+      ExplicitTop = 199
+      ExplicitWidth = 513
       object btnCarregarImagem: TButton
-        Left = 405
+        Left = 395
         Top = 1
         Width = 107
         Height = 39
@@ -64,14 +60,12 @@ object frmPrincipal: TfrmPrincipal
         ParentFont = False
         TabOrder = 0
         OnClick = btnCarregarImagemClick
-        ExplicitLeft = 384
-        ExplicitTop = 6
-        ExplicitHeight = 33
+        ExplicitLeft = 405
       end
       object edtBusca: TEdit
         Left = 1
         Top = 1
-        Width = 376
+        Width = 398
         Height = 39
         Hint = 'Digite o titulo da imagem de que busca'
         Align = alLeft
@@ -81,7 +75,10 @@ object frmPrincipal: TfrmPrincipal
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 1
+        OnKeyPress = edtBuscaKeyPress
         ExplicitHeight = 31
       end
     end

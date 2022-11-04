@@ -23,8 +23,6 @@ object frmPrincipal: TfrmPrincipal
     Height = 231
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 515
-    ExplicitHeight = 241
     object imgTeste: TImage
       Left = 1
       Top = 1
@@ -43,8 +41,6 @@ object frmPrincipal: TfrmPrincipal
       Height = 41
       Align = alBottom
       TabOrder = 0
-      ExplicitTop = 199
-      ExplicitWidth = 513
       object btnCarregarImagem: TButton
         Left = 395
         Top = 1
@@ -60,7 +56,6 @@ object frmPrincipal: TfrmPrincipal
         ParentFont = False
         TabOrder = 0
         OnClick = btnCarregarImagemClick
-        ExplicitLeft = 405
       end
       object edtBusca: TEdit
         Left = 1
