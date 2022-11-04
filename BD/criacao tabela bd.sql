@@ -1,0 +1,1 @@
+create table imagens(id_imagem serial constraint pk_imagens PRIMARY key , titulo varchar (100), imagem bytea);

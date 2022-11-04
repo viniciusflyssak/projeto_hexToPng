@@ -1,0 +1,53 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Principal'
+  ClientHeight = 231
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 505
+    Height = 231
+    Align = alClient
+    TabOrder = 0
+    ExplicitLeft = 296
+    ExplicitTop = 64
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+    object imgTeste: TImage
+      Left = 192
+      Top = 56
+      Width = 105
+      Height = 105
+    end
+    object pnlBotoes: TPanel
+      Left = 1
+      Top = 189
+      Width = 503
+      Height = 41
+      Align = alBottom
+      TabOrder = 0
+      ExplicitLeft = 192
+      ExplicitTop = 184
+      ExplicitWidth = 185
+      object btnCarregarImagem: TButton
+        Left = 402
+        Top = 4
+        Width = 97
+        Height = 33
+        Caption = 'Carregar imagem'
+        TabOrder = 0
+      end
+    end
+  end
+end

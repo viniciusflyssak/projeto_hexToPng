@@ -1,0 +1,41 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Principal'
+  ClientHeight = 231
+  ClientWidth = 505
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Image1: TImage
+    Left = 192
+    Top = 56
+    Width = 105
+    Height = 105
+  end
+  object Button1: TButton
+    Left = 328
+    Top = 192
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 0
+    OnClick = Button1Click
+  end
+  object Connection: TFDConnection
+    Params.Strings = (
+      'Database=goqjsnuz'
+      'User_Name=goqjsnuz'
+      'Password=EBDSxrJYlOw7HHygZMilrW8zu_n1z6nS'
+      'Server=motty.db.elephantsql.com'
+      'DriverID=PG')
+    Left = 160
+    Top = 8
+  end
+end

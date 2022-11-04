@@ -1,0 +1,71 @@
+unit main;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf,
+  FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys,
+  FireDAC.Phys.PG, FireDAC.Phys.PGDef, FireDAC.VCLUI.Wait, Vcl.DBCtrls,
+  FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
+  FireDAC.DApt, FireDAC.Comp.DataSet, jpeg, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    Connection: TFDConnection;
+    Button1: TButton;
+    Image1: TImage;
+    procedure Button1Click(Sender: TObject);
+    function LoadImage(AImage: TImage; ABlobField: TBlobField): Boolean;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+function tfrmPrincipal.LoadImage(AImage: TImage; ABlobField: TBlobField): Boolean;
+var
+  JpgImg: TJPEGImage;
+  StMem: TMemoryStream;
+begin
+  if ABlobField.DataSet.IsEmpty then
+  begin
+    Result := False;
+    Exit;
+  end;
+
+  AImage.Picture.Assign(nil);
+  if not (ABlobField.IsNull) and not (ABlobField.AsString = '') then
+  begin
+    jpgImg := TJPEGImage.Create;
+    stMem := TMemoryStream.Create;
+    try
+      ABlobField.SaveToStream(StMem);
+      ABlobField.SaveToFile('c:\teste\foto.jpg');
+      StMem.Position := 0;
+      JpgImg.LoadFromStream(StMem);
+      AImage.Picture.Assign(JpgImg);
+    finally
+      StMem.Free;
+      JpgImg.Free;
+    end;
+  end;
+  Result := True;
+end;
+
+procedure TfrmPrincipal.Button1Click(Sender: TObject);
+var
+tjpeg : tjpegimage;
+begin
+
+end;
+
+end.
