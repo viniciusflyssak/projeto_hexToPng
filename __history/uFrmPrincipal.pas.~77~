@@ -21,6 +21,7 @@ type
     procedure btnCarregarImagemClick(Sender: TObject);
     function HexStringToBin(HexStr: AnsiString): TMemoryStream;
     function BuscaImagem(tituloImagem: string): AnsiString;
+    procedure edtBuscaKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -52,7 +53,6 @@ begin
     imgTeste.Picture.Graphic := png;
     imgTeste.Proportional := True;
     imgTeste.Center := True;
-    imgTeste.Picture.Assign(png);
   finally
     png.Destroy;
     Stream.free;
@@ -75,12 +75,15 @@ begin
     if not(qryImagem.RecordCount > 0) then
       raise Exception.Create('Imagem não encontrada!');
     Result := qryImagem.FieldByName('IMAGEM').AsAnsiString;
-    showmessage(qryImagem.FieldByName('IMAGEM').AsString);
   finally
     FreeAndNil(qryImagem);
   end;
+end;
 
-  result := '';
+procedure TfrmPrincipal.edtBuscaKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = '13' then
+    btnCarregarImagem;  
 end;
 
 function TfrmPrincipal.HexStringToBin(HexStr: AnsiString): TMemoryStream;

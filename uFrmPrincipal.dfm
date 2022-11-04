@@ -74,6 +74,7 @@ object frmPrincipal: TfrmPrincipal
         ParentShowHint = False
         ShowHint = True
         TabOrder = 1
+        OnKeyPress = edtBuscaKeyPress
       end
     end
   end

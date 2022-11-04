@@ -21,6 +21,7 @@ type
     procedure btnCarregarImagemClick(Sender: TObject);
     function HexStringToBin(HexStr: AnsiString): TMemoryStream;
     function BuscaImagem(tituloImagem: string): AnsiString;
+    procedure edtBuscaKeyPress(Sender: TObject; var Key: Char);
 
   private
     { Private declarations }
@@ -67,8 +68,8 @@ begin
   try
     qryImagem.Connection := DM.Connection;
     qryImagem.Sql.Add(' SELECT TITULO, IMAGEM FROM IMAGENS ');
-    qryImagem.Sql.Add(' WHERE TITULO  = :pTitulo ');
-    qryImagem.ParamByName('pTitulo').Value := edtBusca.Text;
+    qryImagem.Sql.Add(' WHERE TITULO ILIKE :pTitulo ');
+    qryImagem.ParamByName('pTitulo').Value := '%' + edtBusca.Text + '%';
     qryImagem.Open;
     qryImagem.First;
     if not(qryImagem.RecordCount > 0) then
@@ -77,6 +78,12 @@ begin
   finally
     FreeAndNil(qryImagem);
   end;
+end;
+
+procedure TfrmPrincipal.edtBuscaKeyPress(Sender: TObject; var Key: Char);
+begin
+  if Key = #$D then
+    btnCarregarImagemClick(Sender);  
 end;
 
 function TfrmPrincipal.HexStringToBin(HexStr: AnsiString): TMemoryStream;
