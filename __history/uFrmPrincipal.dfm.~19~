@@ -1,7 +1,6 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Principal'
   ClientHeight = 241
@@ -15,6 +14,7 @@ object frmPrincipal: TfrmPrincipal
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object pnlFundo: TPanel
@@ -24,10 +24,6 @@ object frmPrincipal: TfrmPrincipal
     Height = 241
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 296
-    ExplicitTop = 64
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object imgTeste: TImage
       Left = 1
       Top = 1
@@ -46,9 +42,6 @@ object frmPrincipal: TfrmPrincipal
       Height = 41
       Align = alBottom
       TabOrder = 0
-      ExplicitLeft = 192
-      ExplicitTop = 184
-      ExplicitWidth = 185
       object btnCarregarImagem: TButton
         Left = 405
         Top = 1
@@ -64,15 +57,13 @@ object frmPrincipal: TfrmPrincipal
         ParentFont = False
         TabOrder = 0
         OnClick = btnCarregarImagemClick
-        ExplicitLeft = 384
-        ExplicitTop = 6
-        ExplicitHeight = 33
       end
-      object Edit1: TEdit
+      object edtBusca: TEdit
         Left = 1
         Top = 1
-        Width = 376
+        Width = 398
         Height = 39
+        Hint = 'Digite o titulo da imagem de que busca'
         Align = alLeft
         Font.Charset = DEFAULT_CHARSET
         Font.Color = clWindowText
@@ -80,9 +71,10 @@ object frmPrincipal: TfrmPrincipal
         Font.Name = 'Tahoma'
         Font.Style = []
         ParentFont = False
+        ParentShowHint = False
+        ShowHint = True
         TabOrder = 1
-        Text = 'Edit1'
-        ExplicitHeight = 31
+        OnKeyPress = edtBuscaKeyPress
       end
     end
   end
