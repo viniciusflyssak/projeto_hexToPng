@@ -1,7 +1,6 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Principal'
   ClientHeight = 241
@@ -15,6 +14,7 @@ object frmPrincipal: TfrmPrincipal
   Font.Style = []
   OldCreateOrder = False
   Position = poScreenCenter
+  OnResize = FormResize
   PixelsPerInch = 96
   TextHeight = 13
   object pnlFundo: TPanel

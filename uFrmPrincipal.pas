@@ -22,6 +22,7 @@ type
     function HexStringToBin(HexStr: AnsiString): TMemoryStream;
     function BuscaImagem(tituloImagem: string): AnsiString;
     procedure edtBuscaKeyPress(Sender: TObject; var Key: Char);
+    procedure FormResize(Sender: TObject);
 
   private
     { Private declarations }
@@ -84,6 +85,11 @@ procedure TfrmPrincipal.edtBuscaKeyPress(Sender: TObject; var Key: Char);
 begin
   if Key = #$D then
     btnCarregarImagemClick(Sender);  
+end;
+
+procedure TfrmPrincipal.FormResize(Sender: TObject);
+begin
+  edtBusca.Width := btnCarregarImagem.Left -10;
 end;
 
 function TfrmPrincipal.HexStringToBin(HexStr: AnsiString): TMemoryStream;
